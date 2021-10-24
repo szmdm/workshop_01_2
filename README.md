@@ -1,2 +1,2 @@
 # workshop_01_2
-lepsze od poprzedniego
+html css workshop acc. to solution
