@@ -4,11 +4,19 @@
 .statistics__title {
   text-align: center;
 }
+.row {
+display: flex;
+  flex-wrap: wrap;
+}
 .statistics__container {
   max-width: 800px;
   margin: 100px auto 120px;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
+  @include mobile {
+    justify-content: center;
+  }
 }
 .statistics__single {
   max-width: 160px;
