@@ -5,3 +5,21 @@
   }
   
 }
+
+@mixin desktop {
+  @media #{$desktop} {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media #{$tablet} {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media #{$mobile} {
+    @content;
+  }
+}
