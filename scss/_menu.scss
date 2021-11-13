@@ -1,12 +1,12 @@
 
-
-
 .nav__element {
   padding: 0 26px;
+
   &:last-child {
     padding-right: 0;
   }
 }
+
 .nav__link {
   color: var(--color-grey);
   font-weight: 700;
@@ -15,8 +15,168 @@
   padding: 28px 18px 22px;
   border-bottom: 4px solid transparent;
   letter-spacing: 0.1875rem;
+
   &:hover {
     color: var(--color-black);
     border-color: var(--color-primary);
   }
 }
+
+
+.mobile-menu {
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+    background-color: #fff;
+
+  }
+  li {
+    a {
+      display: block;
+      padding: 20px 20px;
+      text-decoration: none;
+      @include desktop {
+        transition: .25s ease-in-out;
+        font-weight: 800;
+        letter-spacing: 0.025em;
+        color: grey;
+        text-decoration: none;
+        //border-radius: 6px;
+        //padding: 0.5em 1em 0.5em 1em;
+        margin-left: 24px;
+      }
+
+      &:hover, &.current {
+        //background-color: #444;
+        color: #2d2626;
+      }
+    }
+  }
+}
+
+.menu-btn {
+  &:hover {
+    background-color: #f4f4f4;
+  }
+
+  display: none;
+
+  &:checked {
+    ~ {
+      .menu {
+        max-height: 240px;
+        position: absolute;
+        left: 0;
+        top: 64px;
+        right: 0;
+      }
+
+      .menu-icon {
+
+        .navicon {
+          background: transparent;
+
+          &:before {
+            transform: rotate(-45deg);
+          }
+
+          &:after {
+            transform: rotate(45deg);
+          }
+        }
+
+        &:not(.steps) {
+          .navicon {
+            &:before {
+              top: 0;
+            }
+
+            &:after {
+              top: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.menu {
+  clear: both;
+  max-height: 0;
+  position: absolute;
+  transition: max-height .2s ease-out;
+}
+
+.menu-icon {
+  cursor: pointer;
+  display: contents;
+  float: right;
+  padding: 28px 20px;
+  user-select: none;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+
+  .navicon {
+    background: var(--color-primary);
+    display: block;
+    height: 2px;
+    position: relative;
+    transition: background .2s ease-out;
+    width: 18px;
+
+    &:before {
+      background: var(--color-primary);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+      top: 5px;
+    }
+
+    &:after {
+      background: var(--color-primary);
+      content: '';
+      display: block;
+      height: 100%;
+      position: absolute;
+      transition: all .2s ease-out;
+      width: 100%;
+      top: -5px;
+    }
+  }
+}
+
+@include desktop {
+  .header {
+    justify-content: space-between;
+    flex-direction: row-reverse;
+
+    li {
+      float: left;
+
+      a {
+        padding: 20px 30px;
+      }
+    }
+
+    .menu {
+      clear: none;
+      max-height: none;
+      position: relative;
+      background: transparent;
+    }
+
+    .menu-icon {
+      display: none;
+    }
+  }
+}
+
+

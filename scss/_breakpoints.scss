@@ -1,25 +1,25 @@
-@media (max-width: 1352px) {
-  .container {
-    width: 100%;
-    padding: 0 15px;
+
+
+@mixin mobile-container {
+  @media (max-width: 1352px) {
+    @content;
   }
-  
 }
 
 @mixin desktop {
-  @media #{$desktop} {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
 @mixin tablet {
-  @media #{$tablet} {
+  @media (min-width:768px) and (max-width:1023px) {
     @content;
   }
 }
 
 @mixin mobile {
-  @media #{$mobile} {
+  @media (max-width: 767px) {
     @content;
   }
 }
