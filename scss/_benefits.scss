@@ -40,9 +40,17 @@
 }
 .benefits__single--notebook {
   --accent-color: var(--color-redish);
+  @include desktop-max {
+    flex-direction: column-reverse;
+    align-items: center;
+    padding: 0 20px;
+  }
   .benefits__image {
     margin-right: 117px;
     margin-bottom: 38px;
+    @include desktop-max {
+      margin: 0 0 40px;
+    }
     &::before {
       content: "";
       width: 180px;
@@ -54,12 +62,19 @@
       right: 0;
       top: -40px;
       transform: rotate(45deg);
+      @include desktop-max {
+        width: 90px;
+        height: 90px;
+      }
     }
     img {
       width: 386px;
       height: auto;
       position: relative;
       z-index: 2;
+      @include desktop-max {
+        width: 190px;
+      }
     }
   }
 }
@@ -86,6 +101,9 @@
   }
   .benefits__text {
     margin: 70px 0;
+    @include desktop-max {
+     margin: 20px 0;
+    }
   }
 }
 .benefits__double {
