@@ -14,8 +14,17 @@
 .opening__heading {
   margin-top: 20px;
   margin-bottom: 38px;
+  @include mobile {
+    margin-left: 50px;
+    margin-right: 50px;
+  }
 }
 .opening__image {
   width: 100%;
   height: auto;
+  @include mobile {
+    width: 200%;
+    transform: translateX(-26%);
+
+  }
 }
