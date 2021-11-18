@@ -1,6 +1,18 @@
-
 @for $i from 1 through 12 {
   .col-#{$i} {
     flex: 0 0 (100% / 12) * $i;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+
+  [class^="col-"] {
+    min-height: 100px;
+    padding: 0 8px;
+    @include mobile {
+      flex-basis: 100%;
+    }
   }
 }
